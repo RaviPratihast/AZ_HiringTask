@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"DM Sans"', "sans-serif"], // Set DM Sans as the default sans-serif font
+        sans: ["DM Sans", "sans-serif"],
+      },
+      backgroundImage: {
+        "custom-gradient": "linear-gradient(to right, #05445E, #D2E3FF)",
       },
     },
   },
