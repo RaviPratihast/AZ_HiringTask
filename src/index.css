@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-border-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gradient-border {
+  border: 1px solid;
+  border-image: linear-gradient(to right, #939ca0, #d2e3ff) 1;
+  border-radius: 6px;
+}
