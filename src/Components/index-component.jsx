@@ -1,4 +1,5 @@
 import { Sidebar } from "./Sidebar";
+import { SidebarLink } from "./SidebarLink";
 import { TopBar } from "./TopBar";
 import { Avatar } from "./Avatar";
 import { Content } from "./Content";
@@ -8,6 +9,7 @@ import { ResourceItem } from "./ResourceItem";
 import { CourseContent } from "./CourseContent";
 export {
   Sidebar,
+  SidebarLink,
   TopBar,
   Avatar,
   Content,

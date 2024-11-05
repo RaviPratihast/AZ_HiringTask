@@ -1,10 +1,12 @@
 import { Sidebar, TopBar, Content } from "./Components/index-component";
 const App = () => {
   return (
-    <div className="flex h-screen bg-gradient-to-r from-[#FFFFFF] to-[#F1FBFF]">
-      <TopBar />
+    <div className="flex h-screen">
       <Sidebar />
-      <Content />
+      <div className="flex flex-col w-full">
+        <TopBar />
+        <Content />
+      </div>
     </div>
   );
 };
