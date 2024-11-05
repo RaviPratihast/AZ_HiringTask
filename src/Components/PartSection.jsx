@@ -1,7 +1,7 @@
 import { ResourceItem } from "./index-component";
 import { IoIosArrowUp } from "react-icons/io";
 import { ImgComponent } from "./index-component";
-import clockOutline from "/src/Assets/clockOutline.svg";
+import clockOutline from "../Assets/ClockOutline.svg";
 import ChartBarOutline from "../Assets/ChartBarOutline.svg";
 import DocumentDuplicateOutline from "../Assets/DocumentDuplicateOutline.svg";
 const PartSection = ({
