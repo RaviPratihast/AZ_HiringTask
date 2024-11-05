@@ -1,9 +1,9 @@
 const SidebarLink = ({ icon, label, className }) => (
   <div
-    className={`flex items-center pl-2 py-1 rounded-sm font-sans font-normal text-[#000000] cursor-pointer ${className}`}
+    className={`flex items-center  gap-5 font-normal text-[#000000] cursor-pointer ${className}`}
   >
-    <span className="text-lg">{icon}</span>
-    <span>{label}</span>
+    <span className="">{icon}</span>
+    <span className="font-sans text-[24px]">{label}</span>
   </div>
 );
 export { SidebarLink };

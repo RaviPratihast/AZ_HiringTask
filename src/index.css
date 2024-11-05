@@ -8,7 +8,34 @@
 }
 
 .gradient-border {
-  border: 1px solid;
-  border-image: linear-gradient(to right, #939ca0, #d2e3ff) 1;
+  position: relative;
   border-radius: 6px;
+  padding: 4px; 
+  background-clip: padding-box; 
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 6px; 
+  padding: 2px; 
+  background: linear-gradient(to right, #939ca0, #d2e3ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); 
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none; 
+}
+
+.border-gradient::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #a0aec0, transparent);
 }

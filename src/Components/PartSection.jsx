@@ -1,8 +1,9 @@
 import { ResourceItem } from "./index-component";
-import { HiOutlineDocumentDuplicate } from "react-icons/hi";
-import { IoMdTime } from "react-icons/io";
-import { BsBarChart } from "react-icons/bs";
 import { IoIosArrowUp } from "react-icons/io";
+import { ImgComponent } from "./index-component";
+import clockOutline from "../Assets/clockOutline.svg";
+import ChartBarOutline from "../Assets/ChartBarOutline.svg";
+import DocumentDuplicateOutline from "../Assets/DocumentDuplicateOutline.svg";
 const PartSection = ({
   partNumber,
   title,
@@ -11,54 +12,59 @@ const PartSection = ({
   items,
   completion,
 }) => (
-  <div className="bg-white shadow-md rounded-lg  mb-4 ">
-    <div className="flex flex-col justify-between p-4 gap-3 pb-2 border">
+  <div className="bg-white shadow-md rounded-2xl border  mr-10 mb-4">
+    <div className="flex flex-col justify-between mr-10">
       <div className="flex justify-between w-full">
-        <div>
-          <h2 className="text-gray-900 ">PART {partNumber}</h2>
-          <p className="font-bold text-lg">{title}</p>
+        <div className="flex flex-col gap-4  mt-8 ml-8">
+          <h2 className="text-gray-900 text-2xl ">PART {partNumber}</h2>
+          <p className="font-bold text-2xl">{title}</p>
         </div>
-        <div className="flex items-center gap-2 space-x-2 text-lg text-gray-500 border pr-3">
+        <div className="flex items-center gap-4 text-lg text-gray-500  mt-10 mr-7 pr-3">
           <div className="flex items-center gap-2">
-            <IoMdTime className="text-2xl" />
-            {duration}
+            <ImgComponent src={clockOutline} className="text-2xl" />
+            <span className="text-[#17384D]"> {duration}</span>
           </div>
           <div className="flex items-center gap-2">
-            <BsBarChart className="text-2xl" />
-            {difficulty}
+            <ImgComponent src={ChartBarOutline} className="text-2xl" />
+            <span className="text-[#17384D]">{difficulty}</span>
           </div>
           <div className="flex items-center">
-            <HiOutlineDocumentDuplicate className="text-2xl" />
-            {items.length < 5 ? "12" : items.length}
+            <ImgComponent src={DocumentDuplicateOutline} className="text-2xl" />
+            <span className="text-[#608AD2]">
+              {items.length < 5 ? "12" : items.length}
+            </span>
           </div>
           <div className="">
-            <IoIosArrowUp className="font-extrabold text-black text-2xl" />
+            <IoIosArrowUp className="font-black  text-[#17384D] text-2xl " />
           </div>
         </div>
       </div>
-      <div className="flex justify-end">
-        <div className="flex justify-center items-center text-md h-[2rem] w-[8.2rem]  bg-[#EFF5FF]  rounded-md">
+      <div className="flex justify-end  mb-4 mt-6  mr-7  ">
+        <div className="flex justify-center items-center text-md border border-[#99E4FF] bg-[#EFF5FF] py-1 px-2 rounded-md">
           {completion}% Completed
         </div>
       </div>
     </div>
-
-    <div className=" bg-gray-200 h-3 rounded-lg ">
+    <div className="bg-gray-200 h-3 rounded-bl-2xl  rounded-br-2xl">
       <div
-        className="bg-[#172B4DD9] h-full rounded-bl-[3rem]  rounded-br-[3rem]"
+        className="bg-[#172B4DD9] h-full rounded-bl-2xl"
         style={{ width: `${completion}%` }}
       ></div>
     </div>
-    <div className="mt-4 ">
-      {items.map((item, index) => (
-        <ResourceItem
-          key={index}
-          icon={item.icon}
-          title={item.title}
-          time={item.time}
-        />
-      ))}
-    </div>
+
+    {items.length > 0 && (
+      <div className="flex flex-col gap-10 mt-10 mr-10 ">
+        {items.map((item, index) => (
+          <ResourceItem
+            key={index}
+            icon={item.icon}
+            title={item.title}
+            time={item.time}
+            isLastItem={index === items.length - 1}
+          />
+        ))}
+      </div>
+    )}
   </div>
 );
 

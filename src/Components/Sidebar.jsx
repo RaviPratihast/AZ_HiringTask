@@ -1,51 +1,52 @@
 import { SidebarLink } from "./index-component";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { RxDashboard } from "react-icons/rx";
-import { TbBulb } from "react-icons/tb";
-import { MdPeopleOutline } from "react-icons/md";
-import { FaRegClipboard } from "react-icons/fa";
-import { HiOutlineChartBar } from "react-icons/hi2";
-import { FaRegStar } from "react-icons/fa6";
+import { ImgComponent } from "./index-component";
+import Dashboard from "../Assets/Dashboard.svg";
+import Learn from "../Assets/Learn.svg";
+import Forum from "../Assets/Forum.svg";
+import upskil from "../Assets/upskil.svg";
+import contest from "../Assets/contest.svg";
+import leaderboard from "../Assets/leaderboard.svg";
 
 const Sidebar = () => {
   return (
-    <div className="border border-red-500 ">
-      <div className="text-xl  font-bold flex justify-start gap-1 pl-6  items-center">
-        <GiHamburgerMenu className="text-2xl " />
-        <h1 className="flex justify-start text-[#172B4D] text-2xl ">
+    <div className="ml-[70px] mt-[64px]">
+      <div className="text-xl  font-bold flex justify-start gap-6 pl-[20px]  items-center">
+        <GiHamburgerMenu className="text-2xl ml-4" />
+        <h1 className="flex justify-start text-[#172B4D] text-3xl ">
           AlgoZenith
         </h1>
       </div>
-      <nav className="space-y-4 text-[#172B4D] ">
+      <nav className="text-[#172B4D] mt-[59px] flex flex-col gap-10 ">
         <SidebarLink
-          icon={<RxDashboard />}
+          icon={<ImgComponent src={Dashboard} alt="Dashboard Icon" />}
           label="Dashboard"
-          className={` mt-[3rem] flex items-center gap-3 ml-5 text-base`}
+          className="flex items-center pl-[28px] text-base "
         />
         <SidebarLink
-          icon={<TbBulb />}
+          icon={<ImgComponent src={Learn} alt="Learn Icon" />}
           label="Learn"
-          className={`mt-[3rem] flex items-center gap-3 ml-5 text-base`}
+          className={` flex items-center  pl-[28px] text-base`}
         />
         <SidebarLink
-          icon={<MdPeopleOutline />}
-          label="Forum"
-          className={`mt-[3rem] flex items-center gap-3 ml-5 text-base`}
+          icon={<ImgComponent src={Forum} alt="Forum Icon" />}
+          label="Forums"
+          className={` flex items-center  pl-[28px] text-base`}
         />
         <SidebarLink
-          icon={<FaRegClipboard />}
+          icon={<ImgComponent src={upskil} alt="upskill Icon" />}
           label="Upskill"
-          className={`bg-[#D6F4FF] pl-2 py-1 text-[#172B4D] font-sans font-extrabold mt-[3rem] flex items-center gap-3 ml-5 text-base`}
+          className={`bg-[#D6F4FF] rounded-lg p-3 text-[#172B4D] font-sans font-black  flex items-center  pl-[28px] text-base`}
         />
         <SidebarLink
-          icon={<HiOutlineChartBar />}
+          icon={<ImgComponent src={contest} alt="Contest Icon" />}
           label="Contest"
-          className={`t-[3rem] flex items-center gap-3 ml-5 text-base`}
+          className={`flex items-center  pl-[28px] text-base`}
         />
         <SidebarLink
-          icon={<FaRegStar />}
+          icon={<ImgComponent src={leaderboard} alt="Leaderboard Icon" />}
           label="Leaderboard"
-          className={` mt-[3rem] flex items-center gap-3 ml-5 text-base`}
+          className={`flex items-center  pl-[28px] text-base`}
         />
       </nav>
     </div>

@@ -1,8 +1,9 @@
 import { PartSection } from "./index-component";
-import { AiOutlinePlayCircle } from "react-icons/ai";
-import { GoQuestion } from "react-icons/go";
-import { BsCodeSlash } from "react-icons/bs";
-import { HiOutlineDocumentDuplicate } from "react-icons/hi";
+import { ImgComponent } from "../Components/ImgComponent";
+import playbutton from "../Assets/playbutton.svg";
+import codesign from "../Assets/codesign.svg";
+import Q from "../Assets/Q.svg";
+import document from "../Assets/document.svg";
 
 const CourseContent = () => {
   const parts = [
@@ -12,12 +13,28 @@ const CourseContent = () => {
       duration: "02:00:00",
       difficulty: "Medium",
       items: [
-        { icon: <AiOutlinePlayCircle />, title: "Video 1", time: "10:00" },
-        { icon: <GoQuestion />, title: "Article 1", time: "10:00" },
-        { icon: <GoQuestion />, title: "Quiz 1", time: "10:00" },
-        { icon: <BsCodeSlash />, title: "Coding Exercise 1", time: "10:00" },
         {
-          icon: <HiOutlineDocumentDuplicate />,
+          icon: <ImgComponent src={playbutton} />,
+          title: "Video 1",
+          time: "10:00",
+        },
+        {
+          icon: <ImgComponent src={Q} />,
+          title: "Article 1",
+          time: "10:00",
+        },
+        {
+          icon: <ImgComponent src={Q} />,
+          title: "Quiz 1",
+          time: "10:00",
+        },
+        {
+          icon: <ImgComponent src={codesign} />,
+          title: "Coding Exercise 1",
+          time: "10:00",
+        },
+        {
+          icon: <ImgComponent src={document} />,
           title: "Combined Resource 1",
           time: "10:00",
         },
@@ -30,12 +47,7 @@ const CourseContent = () => {
       duration: "02:00:00",
       difficulty: "Medium",
       items: [
-        { icon: <AiOutlinePlayCircle />, title: "Video 2", time: "10:00" },
-        {
-          icon: <HiOutlineDocumentDuplicate />,
-          title: "Article 2",
-          time: "10:00",
-        },
+  
       ],
       completion: 20,
     },
@@ -50,7 +62,7 @@ const CourseContent = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen ">
+    <div className="ml-7  rounded-2xl ">
       {parts.map((part, index) => (
         <PartSection key={index} {...part} />
       ))}
