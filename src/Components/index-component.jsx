@@ -7,6 +7,7 @@ import { Tabs } from "./Tabs";
 import { PartSection } from "./PartSection";
 import { ResourceItem } from "./ResourceItem";
 import { CourseContent } from "./CourseContent";
+import { ImgComponent } from "./ImgComponent";
 export {
   Sidebar,
   SidebarLink,
@@ -17,4 +18,5 @@ export {
   PartSection,
   ResourceItem,
   CourseContent,
+  ImgComponent,
 };
